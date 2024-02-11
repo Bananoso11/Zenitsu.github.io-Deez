@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customized Download Button</title>
+    <style>
+        /* Set background image */
+        body {
+            background-image: url('https://wallpapercave.com/wp/wp7362098.jpg');
+            background-size: cover; /* Cover the entire screen */
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            overflow: hidden; /* Prevent content from overflowing */
+            font-family: Arial, sans-serif; /* Ensure consistent font */
+        }
+
+        /* Customize the button */
+        .download-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s; /* Smooth transition on hover */
+        }
+
+        /* On hover, change the background color */
+        .download-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Center content vertically */
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Customized Download Button</h1>
+        <p>Click the button below to download the file:</p>
+        <button class="download-button" onclick="downloadFile()">Download File</button>
+    </div>
+
+    <script>
+        function downloadFile() {
+            // Replace 'https://DeezZenitsu.github.io/Zenitsu' with the desired URL
+            var fileUrl = 'https://DeezZenitsu.github.io/Zenitsu';
+            var fileName = fileUrl.substring(fileUrl.lastIndexOf('/') + 1);
+            var link = document.createElement('a');
+            link.href = fileUrl;
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
